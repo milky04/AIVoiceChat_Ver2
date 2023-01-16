@@ -1,12 +1,12 @@
-import LaunchApplication
+# import LaunchApplication
 import SoundRecAndPlay as sound
 import ConvertVoiceToText
 import GenerateText
 import SpeechSynthesis
 
-# COEIROINKのパスを指定して起動
-application = r"COEIROINKのパスを記載"
-LaunchApplication.launch(application)
+# # COEIROINKのパスを指定して起動
+# application = r"COEIROINKのパスを記載"
+# LaunchApplication.launch(application)
 
 # 録音時間を指定
 record_time = 5
