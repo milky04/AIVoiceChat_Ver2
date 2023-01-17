@@ -37,7 +37,7 @@ import sys
 # import SpeechSynthesis
 # import SoundRecAndPlay as sound
 
-# application = r"C:\Users\youjo\OneDrive\デスクトップ\アプリ\COEIROINK-GPU-v.1.6.0\COEIROINKonVOICEVOX.exe"
+# application = r"COEIROINKのパスを記載"
 # request = SpeechSynthesis.speech_synthesis("起動しました")
 # launch(application, request)
 
@@ -49,7 +49,7 @@ def launch(application_path):
     pro = subprocess.Popen(application_path, stdout=subprocess.PIPE)
     return pro
 
-application = r"C:\Users\youjo\OneDrive\デスクトップ\アプリ\COEIROINK-GPU-v.1.6.0\COEIROINKonVOICEVOX.exe"
+application = r"COEIROINKのパスを記載"
 pro = launch(application)
 
 
