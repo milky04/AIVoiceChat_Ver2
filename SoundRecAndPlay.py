@@ -4,8 +4,11 @@ import wave
 from pydub import AudioSegment
 from pydub.playback import play
 
+# 録音データのパスを指定
+input_path = ".\input.wav"
+
 # wav形式で録音
-def recsound(input_wav, record_time):
+def recsound(record_time):
     CHUNK = 2**10
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
@@ -30,12 +33,14 @@ def recsound(input_wav, record_time):
     stream.close()
     p.terminate()
     
-    wf = wave.open(input_wav, 'wb')
+    wf = wave.open(input_path, 'wb')
     wf.setnchannels(CHANNELS)
     wf.setsampwidth(p.get_sample_size(FORMAT))
     wf.setframerate(RATE)
     wf.writeframes(b''.join(frames))
     wf.close()
+
+    return input_path
 
 
 # wavの音声を再生(path指定ではない(pathの指定でもいける？))
