@@ -1,19 +1,14 @@
-# import LaunchApplication
+import LaunchApplication
 import SoundRecAndPlay as sound
 import ConvertVoiceToText
 import GenerateText
 import SpeechSynthesis
 
-# # COEIROINKのパスを指定して起動
-# application = r"COEIROINKのパスを記載"
-# LaunchApplication.launch(application)
-
-# 録音時間を指定
-record_time = 5
-
 def main():
-    print("処理を開始します。終了する際はターミナルに「Ctrl+C」を入力してください。")
     try:
+        print("処理を開始します。終了する際はターミナルに「Ctrl+C」を入力してください。")
+        # アプリケーションの起動
+        process = LaunchApplication.launch(application, url)
         while True:
             # 録音データのパスと録音時間を指定して録音
             input_sound = sound.recsound(record_time)
@@ -27,7 +22,17 @@ def main():
             # responseを再生
             sound.playsound(response)
     except KeyboardInterrupt:
-        print("処理を停止しました。")
+        # プロセスを終了
+        process.kill()
+        print("処理を終了しました。")
+
+
+# COEIROINKのパスとローカルAPIのURLを指定
+application = r"C:\Users\youjo\OneDrive\デスクトップ\アプリ\COEIROINK-GPU-v.1.6.0\COEIROINKonVOICEVOX.exe"
+url = "http://localhost:50031/"
+
+# 録音時間を指定
+record_time = 5
 
 if __name__ == '__main__':
     main()
