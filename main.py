@@ -28,7 +28,7 @@ def main():
 
 
 # COEIROINKのパスとローカルAPIのURLを指定
-application = r"C:\Users\youjo\OneDrive\デスクトップ\アプリ\COEIROINK-GPU-v.1.6.0\COEIROINKonVOICEVOX.exe"
+application = r"COEIROINKのパスを記載"
 url = "http://localhost:50031/"
 
 # 録音時間を指定
