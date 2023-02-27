@@ -3,6 +3,7 @@ import SoundRecAndPlay as sound
 import ConvertVoiceToText
 import GenerateText
 import SpeechSynthesis
+import os
 
 def main():
     try:
@@ -14,6 +15,8 @@ def main():
             input_sound = sound.recsound(record_time)
             # input_soundに保存された録音データをConvertVoiceToTextでテキストに変換
             input_text = ConvertVoiceToText.convert_voice_to_text(input_sound)
+            # 録音データ削除
+            os.remove(input_sound)
             # input_textをGenerateTextに投げて生成された文章を受け取る
             result_text = GenerateText.generate_text(input_text)
             print("AI:" + result_text)
